@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hasil Nilai TKA - SMP Fajar Indah Pademangan</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --biru-tua: #0D2B6E;
+    --biru-medium: #1447A8;
+    --biru-muda: #2563EB;
+    --biru-cerah: #3B82F6;
+    --biru-pale: #DBEAFE;
+    --biru-bg: #EFF6FF;
+    --kuning: #F59E0B;
+    --putih: #FFFFFF;
+    --abu: #64748B;
+    --abu-muda: #F1F5F9;
+    --teks: #1E293B;
+    --border: #CBD5E1;
+    --baik-istimewa: #065F46;
+    --baik-istimewa-bg: #D1FAE5;
+    --baik: #1D4ED8;
+    --baik-bg: #DBEAFE;
+    --memadai: #92400E;
+    --memadai-bg: #FEF3C7;
+    --kurang: #991B1B;
+    --kurang-bg: #FEE2E2;
+  }
+
+  body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(160deg, #0D2B6E 0%, #1447A8 40%, #2563EB 100%);
+    min-height: 100vh;
+    padding: 0;
+    color: var(--teks);
+  }
+
+  /* ===== HEADER ===== */
+  .header {
+    background: var(--putih);
+    border-bottom: 4px solid var(--kuning);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+  }
+
+  .header-logo {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+  }
+
+  .header-logo svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .header-divider {
+    width: 3px;
+    height: 60px;
+    background: linear-gradient(to bottom, var(--biru-tua), var(--biru-cerah));
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .header-text {
+    flex: 1;
+  }
+
+  .header-kementerian {
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--biru-tua);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+  }
+
+  .header-sekolah {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--biru-tua);
+    line-height: 1.2;
+    margin-top: 2px;
+  }
+
+  .header-sub {
+    font-size: 12px;
+    color: var(--abu);
+    margin-top: 2px;
+  }
+
+  .header-badge {
+    background: var(--biru-tua);
+    color: var(--putih);
+    font-family: 'Poppins', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+    flex-shrink: 0;
+  }
+
+  /* ===== MAIN ===== */
+  .main {
+    padding: 40px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 110px);
+  }
+
+  /* ===== HERO TITLE ===== */
+  .hero {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    color: var(--putih);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.3);
+    margin-bottom: 14px;
+  }
+
+  .hero h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--putih);
+    line-height: 1.2;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+
+  .hero h1 span {
+    color: var(--kuning);
+  }
+
+  .hero-sub {
+    color: rgba(255,255,255,0.8);
+    font-size: 15px;
+    margin-top: 8px;
+    font-weight: 500;
+  }
+
+  /* ===== SEARCH CARD ===== */
+  .search-card {
+    background: var(--putih);
+    border-radius: 20px;
+    padding: 36px 40px;
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  }
+
+  .search-card h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--biru-tua);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .search-card h2::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 20px;
+    background: var(--biru-cerah);
+    border-radius: 2px;
+  }
+
+  .input-group {
+    display: flex;
+    gap: 10px;
+  }
+
+  .input-nisn {
+    flex: 1;
+    padding: 14px 18px;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: var(--teks);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    outline: none;
+  }
+
+  .input-nisn:focus {
+    border-color: var(--biru-cerah);
+    box-shadow: 0 0 0 3px rgba(59,130,246,0.15);
+  }
+
+  .input-nisn::placeholder {
+    color: #CBD5E1;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+
+  .btn-cari {
+    padding: 14px 24px;
+    background: var(--biru-tua);
+    color: var(--putih);
+    border: none;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+  }
+
+  .btn-cari:hover { background: var(--biru-medium); }
+  .btn-cari:active { transform: scale(0.97); }
+
+  .hint {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--abu);
+    text-align: center;
+  }
+
+  /* ===== ERROR STATE ===== */
+  .error-box {
+    margin-top: 20px;
+    background: #FEF2F2;
+    border: 1.5px solid #FECACA;
+    border-radius: 12px;
+    padding: 14px 18px;
+    color: #991B1B;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    display: none;
+  }
+
+  /* ===== RESULT CARD ===== */
+  .result-card {
+    background: var(--putih);
+    border-radius: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+    overflow: hidden;
+    display: none;
+    margin-top: 0;
+    animation: slideUp 0.4s ease;
+  }
+
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-header {
+    background: linear-gradient(135deg, var(--biru-tua), var(--biru-medium));
+    padding: 24px 28px;
+    color: var(--putih);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .result-avatar {
+    width: 52px;
+    height: 52px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--putih);
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.4);
+  }
+
+  .result-nama {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+
+  .result-nisn-display {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+    margin-top: 2px;
+  }
+
+  .result-body {
+    padding: 24px 28px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 24px;
+  }
+
+  .info-item {
+    background: var(--abu-muda);
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+
+  .info-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--abu);
+    margin-bottom: 4px;
+  }
+
+  .info-value {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--teks);
+  }
+
+  .nilai-section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--biru-tua);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .nilai-section h3::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 14px;
+    background: var(--biru-cerah);
+    border-radius: 2px;
+  }
+
+  .nilai-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .nilai-card {
+    border-radius: 14px;
+    padding: 18px 16px;
+    text-align: center;
+    border: 1.5px solid var(--border);
+  }
+
+  .nilai-mapel {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--abu);
+    margin-bottom: 8px;
+  }
+
+  .nilai-angka {
+    font-family: 'Poppins', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--biru-tua);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .badge-predikat {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .badge-baik-istimewa {
+    background: var(--baik-istimewa-bg);
+    color: var(--baik-istimewa);
+  }
+
+  .badge-baik {
+    background: var(--baik-bg);
+    color: var(--baik);
+  }
+
+  .badge-memadai {
+    background: var(--memadai-bg);
+    color: var(--memadai);
+  }
+
+  .badge-kurang {
+    background: var(--kurang-bg);
+    color: var(--kurang);
+  }
+
+  .no-urut-info {
+    text-align: center;
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--border);
+    font-size: 12px;
+    color: var(--abu);
+  }
+
+  .no-urut-info span {
+    font-weight: 700;
+    color: var(--biru-tua);
+  }
+
+  .btn-reset {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: transparent;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--abu);
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-reset:hover {
+    background: var(--abu-muda);
+    color: var(--teks);
+  }
+
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 20px;
+    color: rgba(255,255,255,0.5);
+    font-size: 12px;
+  }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .header { padding: 10px 14px; gap: 10px; }
+    .header-sekolah { font-size: 14px; }
+    .header-kementerian { font-size: 9px; }
+    .header-badge { font-size: 10px; padding: 5px 10px; }
+    .header-logo { width: 54px; height: 54px; }
+    .hero h1 { font-size: 24px; }
+    .search-card { padding: 24px 20px; }
+    .result-body { padding: 18px 16px; }
+    .nilai-angka { font-size: 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-logo">
+    <svg viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <!-- Tut Wuri Handayani simplified emblem -->
+      <polygon points="40,4 52,14 66,12 64,26 74,36 64,46 66,60 52,58 40,68 28,58 14,60 16,46 6,36 16,26 14,12 28,14" fill="#0D2B6E" stroke="#F59E0B" stroke-width="1.5"/>
+      <polygon points="40,10 50,18 62,16 60,28 69,37 60,46 62,58 50,56 40,64 30,56 18,58 20,46 11,37 20,28 18,16 30,18" fill="none" stroke="#F59E0B" stroke-width="0.8" opacity="0.5"/>
+      <!-- Buku (book) -->
+      <path d="M28 50 L28 28 Q28 26 30 26 L39 26 L39 50 Z" fill="#FFFFFF" opacity="0.9"/>
+      <path d="M52 50 L52 28 Q52 26 50 26 L41 26 L41 50 Z" fill="#FFFFFF" opacity="0.9"/>
+      <path d="M28 50 L52 50" stroke="#F59E0B" stroke-width="1.5"/>
+      <!-- Tangan (hand silhouette) -->
+      <ellipse cx="40" cy="50" rx="12" ry="5" fill="#F59E0B" opacity="0.8"/>
+      <text x="40" y="22" font-family="Arial" font-size="6" font-weight="bold" fill="#FFFFFF" text-anchor="middle">TUT WURI</text>
+      <text x="40" y="58" font-family="Arial" font-size="5" font-weight="bold" fill="#FFFFFF" text-anchor="middle">HANDAYANI</text>
+    </svg>
+  </div>
+  <div class="header-divider"></div>
+  <div class="header-text">
+    <div class="header-kementerian">Kementerian Pendidikan Dasar dan Menengah · Dinas Pendidikan Provinsi DKI Jakarta</div>
+    <div class="header-sekolah">SMP Fajar Indah Pademangan</div>
+    <div class="header-sub">Jl. Pademangan · Kota Jakarta Utara · NPSN 20106509</div>
+  </div>
+  <div class="header-badge">TKA 2026</div>
+</header>
+
+<!-- MAIN -->
+<main class="main">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Pengumuman Resmi</div>
+    <h1>Hasil Nilai <span>TKA SMP</span><br>Fajar Indah</h1>
+    <p class="hero-sub">Tahun Pelajaran 2025/2026</p>
+  </div>
+
+  <!-- SEARCH CARD -->
+  <div class="search-card" id="searchSection">
+    <h2>Cek Nilai Siswa</h2>
+    <div class="input-group">
+      <input
+        type="text"
+        class="input-nisn"
+        id="inputNISN"
+        placeholder="Masukkan NISN..."
+        maxlength="20"
+        autocomplete="off"
+        inputmode="numeric"
+        onkeydown="if(event.key==='Enter') cariNilai()"
+      >
+      <button class="btn-cari" onclick="cariNilai()">🔍 Cari</button>
+    </div>
+    <p class="hint">Masukkan NISN 10 digit untuk melihat hasil TKA</p>
+    <div class="error-box" id="errorBox">❌ NISN tidak ditemukan. Periksa kembali nomor NISN Anda.</div>
+  </div>
+
+  <!-- RESULT CARD -->
+  <div class="result-card" id="resultCard">
+    <div class="result-header">
+      <div class="result-avatar" id="resultAvatar"></div>
+      <div>
+        <div class="result-nama" id="resultNama"></div>
+        <div class="result-nisn-display" id="resultNisnDisplay"></div>
+      </div>
+    </div>
+    <div class="result-body">
+      <div class="info-grid">
+        <div class="info-item">
+          <div class="info-label">Nomor Peserta</div>
+          <div class="info-value" id="resultNoPeserta" style="font-size:11px;"></div>
+        </div>
+        <div class="info-item">
+          <div class="info-label">Tempat, Tgl Lahir</div>
+          <div class="info-value" id="resultTTL" style="font-size:11px;"></div>
+        </div>
+      </div>
+
+      <div class="nilai-section">
+        <h3>Hasil Nilai TKA</h3>
+        <div class="nilai-cards">
+          <div class="nilai-card">
+            <div class="nilai-mapel">Matematika</div>
+            <div class="nilai-angka" id="nilaiMtk"></div>
+            <span class="badge-predikat" id="predikatMtk"></span>
+          </div>
+          <div class="nilai-card">
+            <div class="nilai-mapel">Bahasa Indonesia</div>
+            <div class="nilai-angka" id="nilaiBI"></div>
+            <span class="badge-predikat" id="predikatBI"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="no-urut-info">
+        No. Urut: <span id="resultNoUrut"></span> &nbsp;·&nbsp; Kepala Sekolah: <span>Handy Sulistyo, S.E.</span>
+      </div>
+
+      <button class="btn-reset" onclick="resetForm()">← Cari Siswa Lain</button>
+    </div>
+  </div>
+
+</main>
+
+<div class="footer">© 2026 SMP Fajar Indah Pademangan · TKA Kemendikdasmen</div>
+
+<script>
+const DATA = [
+  {no:1, nomor:"T2-26-01-02-0506-0001-8", nisn:"0119891086", nama:"FAITH GRACELYNN KISSINA", ttl:"JAKARTA, 14 September 2011", mtk:73.33, mtk_p:"Baik", bi:80.00, bi_p:"Baik"},
+  {no:2, nomor:"T2-26-01-02-0506-0002-7", nisn:"0112028623", nama:"WENSY", ttl:"Kuala Secapah, 12 Mei 2011", mtk:40.00, mtk_p:"Memadai", bi:73.33, bi_p:"Memadai"},
+  {no:3, nomor:"T2-26-01-02-0506-0003-6", nisn:"0117173500", nama:"AISYAH JOVA SEPTIANI", ttl:"WONOGIRI, 27 September 2011", mtk:20.00, mtk_p:"Kurang", bi:66.67, bi_p:"Memadai"},
+  {no:4, nomor:"T2-26-01-02-0506-0004-5", nisn:"0116248404", nama:"HANDY RENATA", ttl:"JAKARTA, 26 September 2011", mtk:36.67, mtk_p:"Memadai", bi:46.67, bi_p:"Kurang"},
+  {no:5, nomor:"T2-26-01-02-0506-0005-4", nisn:"0111872868", nama:"BENNETT ZIO LAWRENCE", ttl:"JAKARTA, 4 November 2011", mtk:63.33, mtk_p:"Baik", bi:80.00, bi_p:"Baik"},
+  {no:6, nomor:"T2-26-01-02-0506-0006-3", nisn:"0114726854", nama:"DHANNY CHAIRIEL", ttl:"JAKARTA, 25 Agustus 2011", mtk:30.00, mtk_p:"Kurang", bi:73.33, bi_p:"Memadai"},
+  {no:7, nomor:"T2-26-01-02-0506-0007-2", nisn:"0103486523", nama:"TRIZTAN GUNAWAN", ttl:"JAKARTA, 3 Februari 2010", mtk:63.33, mtk_p:"Baik", bi:93.33, bi_p:"Baik"},
+  {no:8, nomor:"T2-26-01-02-0506-0008-9", nisn:"0118754745", nama:"CHELSY FALENSYA LAY", ttl:"JAKARTA, 12 Maret 2011", mtk:50.00, mtk_p:"Memadai", bi:83.33, bi_p:"Baik"},
+  {no:9, nomor:"T2-26-01-02-0506-0009-8", nisn:"0104580169", nama:"ZACK GREYSON", ttl:"JAKARTA, 17 Oktober 2010", mtk:36.67, mtk_p:"Memadai", bi:93.33, bi_p:"Baik"},
+  {no:10, nomor:"T2-26-01-02-0506-0010-7", nisn:"0119078532", nama:"DARREN ANDERSON", ttl:"JAKARTA, 24 Februari 2011", mtk:63.33, mtk_p:"Baik", bi:50.00, bi_p:"Memadai"},
+  {no:11, nomor:"T2-26-01-02-0506-0011-6", nisn:"0115981708", nama:"MILKAH GRACIA", ttl:"JAKARTA, 2 Agustus 2010", mtk:26.67, mtk_p:"Kurang", bi:80.00, bi_p:"Baik"},
+  {no:12, nomor:"T2-26-01-02-0506-0012-5", nisn:"0113479083", nama:"VINCENT", ttl:"JAKARTA, 13 September 2011", mtk:40.00, mtk_p:"Memadai", bi:43.33, bi_p:"Kurang"},
+  {no:13, nomor:"T2-26-01-02-0506-0013-4", nisn:"0113132336", nama:"FANDI", ttl:"JAKARTA, 4 April 2011", mtk:26.67, mtk_p:"Kurang", bi:80.00, bi_p:"Baik"},
+  {no:14, nomor:"T2-26-01-02-0506-0014-3", nisn:"0103674562", nama:"DELVIN ASWAN GODJALI", ttl:"JAKARTA, 17 Juni 2010", mtk:36.67, mtk_p:"Memadai", bi:43.33, bi_p:"Kurang"},
+  {no:15, nomor:"T2-26-01-02-0506-0015-2", nisn:"0119171988", nama:"JOVALENT FRANSISKUS IMANUEL", ttl:"JAKARTA, 31 Januari 2011", mtk:43.33, mtk_p:"Memadai", bi:73.33, bi_p:"Memadai"},
+  {no:16, nomor:"T2-26-01-02-0506-0016-9", nisn:"0105680044", nama:"BENAYAN LIONEL SUKI", ttl:"JAKARTA, 3 Juli 2010", mtk:36.67, mtk_p:"Memadai", bi:66.67, bi_p:"Memadai"},
+  {no:17, nomor:"T2-26-01-02-0506-0017-8", nisn:"0119688719", nama:"LIONEL BELTRAND", ttl:"JAKARTA, 13 November 2011", mtk:43.33, mtk_p:"Memadai", bi:66.67, bi_p:"Memadai"},
+  {no:18, nomor:"T2-26-01-02-0506-0018-7", nisn:"0098765383", nama:"JOSE HANSEN", ttl:"JAKARTA, 2 September 2009", mtk:43.33, mtk_p:"Memadai", bi:50.00, bi_p:"Memadai"},
+  {no:19, nomor:"T2-26-01-02-0506-0019-6", nisn:"0112892040", nama:"CHERYL ANGELIA", ttl:"JAKARTA, 8 Januari 2012", mtk:46.67, mtk_p:"Memadai", bi:83.33, bi_p:"Baik"},
+  {no:20, nomor:"T2-26-01-02-0506-0020-5", nisn:"0116234146", nama:"MATHEW JOSE HARDIAN", ttl:"JAKARTA, 24 Oktober 2011", mtk:50.00, mtk_p:"Memadai", bi:83.33, bi_p:"Baik"},
+  {no:21, nomor:"T2-26-01-02-0506-0021-4", nisn:"0116058094", nama:"MERRY LIN ILONA", ttl:"TEBING TINGGI, 4 Maret 2011", mtk:53.33, mtk_p:"Memadai", bi:63.33, bi_p:"Memadai"},
+  {no:22, nomor:"T2-26-01-02-0506-0022-3", nisn:"0115176619", nama:"TJIN KET BUI", ttl:"PEMANGKAT, 3 Januari 2011", mtk:33.33, mtk_p:"Memadai", bi:56.67, bi_p:"Memadai"},
+  {no:23, nomor:"T2-26-01-02-0506-0023-2", nisn:"0113617397", nama:"SELLY ANGELINA LIE", ttl:"JAKARTA, 17 September 2011", mtk:50.00, mtk_p:"Memadai", bi:70.00, bi_p:"Memadai"},
+  {no:24, nomor:"T2-26-01-02-0506-0024-9", nisn:"0117594509", nama:"CHLOE FRANCESCA SHIE", ttl:"JAKARTA, 19 Agustus 2011", mtk:26.67, mtk_p:"Kurang", bi:80.00, bi_p:"Baik"},
+  {no:25, nomor:"T2-26-01-02-0506-0025-8", nisn:"0116903227", nama:"SELENA PHANG", ttl:"JAKARTA, 25 April 2011", mtk:36.67, mtk_p:"Memadai", bi:66.67, bi_p:"Memadai"},
+  {no:26, nomor:"T2-26-01-02-0506-0026-7", nisn:"0113658163", nama:"JOOSLIM PRATAMA", ttl:"JAKARTA, 10 Juli 2011", mtk:63.33, mtk_p:"Baik", bi:86.67, bi_p:"Baik"},
+  {no:27, nomor:"T2-26-01-02-0506-0027-6", nisn:"0112705111", nama:"WILLY PRANATA", ttl:"PONTIANAK, 6 Agustus 2011", mtk:53.33, mtk_p:"Memadai", bi:90.00, bi_p:"Baik"},
+  {no:28, nomor:"T2-26-01-02-0506-0028-5", nisn:"0112958120", nama:"WILLSON WILLIAM", ttl:"JAKARTA, 23 Juli 2011", mtk:36.67, mtk_p:"Memadai", bi:76.67, bi_p:"Baik"},
+  {no:29, nomor:"T2-26-01-02-0506-0029-4", nisn:"0109234526", nama:"VIONA LETYCIA", ttl:"JAKARTA, 2 Juli 2010", mtk:36.67, mtk_p:"Memadai", bi:56.67, bi_p:"Memadai"},
+  {no:30, nomor:"T2-26-01-02-0506-0030-3", nisn:"0107396908", nama:"RAFAEL MELVIYANTO ALI", ttl:"JAKARTA, 27 Mei 2010", mtk:30.00, mtk_p:"Kurang", bi:63.33, bi_p:"Memadai"},
+  {no:31, nomor:"T2-26-01-02-0506-0031-2", nisn:"0115330735", nama:"EFFENDY CHEN", ttl:"JAKARTA, 20 Februari 2011", mtk:43.33, mtk_p:"Memadai", bi:73.33, bi_p:"Memadai"},
+  {no:32, nomor:"T2-26-01-02-0506-0032-9", nisn:"0103289753", nama:"VIVIAN AGNES TASIA", ttl:"JAKARTA, 9 Oktober 2010", mtk:30.00, mtk_p:"Kurang", bi:66.67, bi_p:"Memadai"},
+  {no:33, nomor:"T2-26-01-02-0506-0033-8", nisn:"0112765275", nama:"JASON AL VARO MEIKY", ttl:"PANGKALPINANG, 3 April 2011", mtk:43.33, mtk_p:"Memadai", bi:63.33, bi_p:"Memadai"},
+  {no:34, nomor:"T2-26-01-02-0506-0034-7", nisn:"0114218012", nama:"DONIAN", ttl:"JAKARTA, 22 Juli 2011", mtk:33.33, mtk_p:"Memadai", bi:63.33, bi_p:"Memadai"},
+  {no:35, nomor:"T2-26-01-02-0506-0035-6", nisn:"0118527423", nama:"VALENCIA MARTHA AURELIA", ttl:"JAKARTA, 13 September 2011", mtk:43.33, mtk_p:"Memadai", bi:66.67, bi_p:"Memadai"},
+  {no:36, nomor:"T2-26-01-02-0506-0036-5", nisn:"0111974547", nama:"CAROLINE MARCIANDO", ttl:"JAKARTA, 24 Juni 2011", mtk:50.00, mtk_p:"Memadai", bi:76.67, bi_p:"Baik"},
+  {no:37, nomor:"T2-26-01-02-0506-0037-4", nisn:"0119025383", nama:"LIONEL FERNALDY WU", ttl:"JAKARTA, 23 Februari 2011", mtk:33.33, mtk_p:"Memadai", bi:86.67, bi_p:"Baik"},
+  {no:38, nomor:"T2-26-01-02-0506-0038-3", nisn:"0104663776", nama:"AMORITA CILARIA", ttl:"JAKARTA, 19 Oktober 2010", mtk:46.67, mtk_p:"Memadai", bi:66.67, bi_p:"Memadai"},
+  {no:39, nomor:"T2-26-01-02-0506-0039-2", nisn:"0112527327", nama:"STEVY FLORENCYA", ttl:"PONTIANAK, 28 April 2011", mtk:50.00, mtk_p:"Memadai", bi:86.67, bi_p:"Baik"},
+  {no:40, nomor:"T2-26-01-02-0506-0040-9", nisn:"0118094244", nama:"EDISON CAVANI", ttl:"SINGKAWANG, 13 September 2011", mtk:66.67, mtk_p:"Baik", bi:96.67, bi_p:"Baik - Istimewa"},
+  {no:41, nomor:"T2-26-01-02-0506-0041-8", nisn:"0119815973", nama:"FERDIANSYAH", ttl:"JAKARTA, 24 Februari 2011", mtk:40.00, mtk_p:"Memadai", bi:53.33, bi_p:"Memadai"},
+  {no:42, nomor:"T2-26-01-02-0506-0042-7", nisn:"0116329803", nama:"IVAH CALISTA ANGEL", ttl:"JAKARTA, 14 Januari 2011", mtk:66.67, mtk_p:"Baik", bi:100.00, bi_p:"Baik - Istimewa"},
+  {no:43, nomor:"T2-26-01-02-0506-0043-6", nisn:"0113918156", nama:"WILSON DEANDRA", ttl:"JAKARTA, 15 Januari 2011", mtk:50.00, mtk_p:"Memadai", bi:86.67, bi_p:"Baik"},
+  {no:44, nomor:"T2-26-01-02-0506-0044-5", nisn:"0116471249", nama:"GLADWIN ALBERN CLEVERLEY", ttl:"JAKARTA, 5 Oktober 2011", mtk:60.00, mtk_p:"Baik", bi:80.00, bi_p:"Baik"},
+  {no:45, nomor:"T2-26-01-02-0506-0045-4", nisn:"0114653914", nama:"TRISTAN WILLIAM ASTONO", ttl:"JAKARTA, 22 Januari 2011", mtk:33.33, mtk_p:"Memadai", bi:90.00, bi_p:"Baik"},
+  {no:46, nomor:"T2-26-01-02-0506-0046-3", nisn:"0112592624", nama:"ANGEL LEE MAJESTY", ttl:"JAKARTA, 24 November 2011", mtk:40.00, mtk_p:"Memadai", bi:80.00, bi_p:"Baik"},
+  {no:47, nomor:"T2-26-01-02-0506-0047-2", nisn:"0111300621", nama:"YONATHAN", ttl:"JAKARTA, 10 Juli 2011", mtk:43.33, mtk_p:"Memadai", bi:60.00, bi_p:"Memadai"},
+  {no:48, nomor:"T2-26-01-02-0506-0048-9", nisn:"0114081259", nama:"LAY KEYREN ANABELLE", ttl:"JAKARTA, 19 Juni 2011", mtk:43.33, mtk_p:"Memadai", bi:86.67, bi_p:"Baik"},
+  {no:49, nomor:"T2-26-01-02-0506-0049-8", nisn:"0101307888", nama:"LEORA FLORETTA", ttl:"JAKARTA, 21 September 2010", mtk:36.67, mtk_p:"Memadai", bi:66.67, bi_p:"Memadai"},
+  {no:50, nomor:"T2-26-01-02-0506-0050-7", nisn:"0118752425", nama:"FELICIA GRACIELLE BUDIONO", ttl:"JAKARTA, 13 September 2011", mtk:46.67, mtk_p:"Memadai", bi:80.00, bi_p:"Baik"},
+  {no:51, nomor:"T2-26-01-02-0506-0051-6", nisn:"0104462028", nama:"RISKO CHRISTIAN MANIK", ttl:"JAKARTA, 1 Oktober 2010", mtk:33.33, mtk_p:"Memadai", bi:73.33, bi_p:"Memadai"},
+  {no:52, nomor:"T2-26-01-02-0506-0052-5", nisn:"0114841829", nama:"EVAN DELANO MARHAN", ttl:"JAKARTA, 11 November 2011", mtk:50.00, mtk_p:"Memadai", bi:93.33, bi_p:"Baik"},
+  {no:53, nomor:"T2-26-01-02-0506-0053-4", nisn:"0114876314", nama:"LOUIS MARTIN", ttl:"JAKARTA, 30 Mei 2011", mtk:36.67, mtk_p:"Memadai", bi:76.67, bi_p:"Baik"},
+  {no:54, nomor:"T2-26-01-02-0506-0054-3", nisn:"0071401652", nama:"JASON CHRISTIAN", ttl:"JAKARTA, 12 September 2007", mtk:46.67, mtk_p:"Memadai", bi:86.67, bi_p:"Baik"},
+  {no:55, nomor:"T2-26-01-02-0506-0055-2", nisn:"0108704902", nama:"RAVEN NARENDRA", ttl:"JAKARTA, 31 Desember 2010", mtk:40.00, mtk_p:"Memadai", bi:70.00, bi_p:"Memadai"},
+  {no:56, nomor:"T2-26-01-02-0506-0056-9", nisn:"0121001454", nama:"RAYMOND SANJAYA", ttl:"JAKARTA, 20 Februari 2012", mtk:60.00, mtk_p:"Baik", bi:93.33, bi_p:"Baik"},
+  {no:57, nomor:"T2-26-01-02-0506-0057-8", nisn:"0112283351", nama:"LOUIS MIGUEL LIM", ttl:"JAKARTA, 19 Desember 2011", mtk:46.67, mtk_p:"Memadai", bi:83.33, bi_p:"Baik"},
+  {no:58, nomor:"T2-26-01-02-0506-0058-7", nisn:"0118816540", nama:"DAVIN JUNESON", ttl:"JAKARTA, 21 Juni 2011", mtk:23.33, mtk_p:"Kurang", bi:66.67, bi_p:"Memadai"},
+  {no:59, nomor:"T2-26-01-02-0506-0059-6", nisn:"0117882846", nama:"JEANY ANGGRAINI", ttl:"JAKARTA, 20 Mei 2011", mtk:46.67, mtk_p:"Memadai", bi:90.00, bi_p:"Baik"},
+  {no:60, nomor:"T2-26-01-02-0506-0060-5", nisn:"0118096332", nama:"HAN WEN", ttl:"JAKARTA, 7 Maret 2011", mtk:40.00, mtk_p:"Memadai", bi:73.33, bi_p:"Memadai"},
+  {no:61, nomor:"T2-26-01-02-0506-0061-4", nisn:"0102348391", nama:"JESSICA TASHIT", ttl:"JAKARTA, 2 Desember 2010", mtk:36.67, mtk_p:"Memadai", bi:53.33, bi_p:"Memadai"},
+  {no:62, nomor:"T2-26-01-02-0506-0062-3", nisn:"0102544996", nama:"MUHAMMAD RIZQI NUR HIDAYAT", ttl:"JAKARTA, 14 Juni 2010", mtk:30.00, mtk_p:"Kurang", bi:50.00, bi_p:"Memadai"},
+  {no:63, nomor:"T2-26-01-02-0506-0063-2", nisn:"0105396911", nama:"DESY OFTAFFA", ttl:"PANGKALPINANG, 18 Desember 2010", mtk:53.33, mtk_p:"Memadai", bi:73.33, bi_p:"Memadai"},
+  {no:64, nomor:"T2-26-01-02-0506-0064-9", nisn:"3117666418", nama:"GLENN ALEXANDER", ttl:"JAKARTA, 7 Juni 2011", mtk:36.67, mtk_p:"Memadai", bi:83.33, bi_p:"Baik"},
+  {no:65, nomor:"T2-26-01-02-0506-0065-8", nisn:"0113100658", nama:"DARRELL RICH MARQUEZ LU", ttl:"JAKARTA, 9 Februari 2011", mtk:90.00, mtk_p:"Baik", bi:90.00, bi_p:"Baik"},
+  {no:66, nomor:"T2-26-01-02-0506-0066-7", nisn:"0118098141", nama:"DYLAN MARCELLUS", ttl:"JAKARTA, 17 Maret 2011", mtk:46.67, mtk_p:"Memadai", bi:66.67, bi_p:"Memadai"},
+  {no:67, nomor:"T2-26-01-02-0506-0067-6", nisn:"0115906178", nama:"LAY FLORA FLORENCIA", ttl:"JAKARTA, 7 Juli 2011", mtk:46.67, mtk_p:"Memadai", bi:76.67, bi_p:"Baik"},
+  {no:68, nomor:"T2-26-01-02-0506-0068-5", nisn:"0119007439", nama:"VALERIAN CARLAN GABRIO", ttl:"MEMPAWAH, 31 Januari 2011", mtk:26.67, mtk_p:"Kurang", bi:53.33, bi_p:"Memadai"},
+  {no:69, nomor:"T2-26-01-02-0506-0069-4", nisn:"0111896995", nama:"GRACIO DHAFINTAN", ttl:"BELINYU BANGKA, 28 Maret 2011", mtk:63.33, mtk_p:"Baik", bi:90.00, bi_p:"Baik"},
+  {no:70, nomor:"T2-26-01-02-0506-0070-3", nisn:"0117953917", nama:"EVELY CATRIONA SAKA", ttl:"SINGKAWANG, 8 Mei 2011", mtk:56.67, mtk_p:"Baik", bi:90.00, bi_p:"Baik"},
+  {no:71, nomor:"T2-26-01-02-0506-0071-2", nisn:"0112031518", nama:"CELINE OLIVIA", ttl:"JAKARTA, 3 Mei 2011", mtk:50.00, mtk_p:"Memadai", bi:63.33, bi_p:"Memadai"},
+  {no:72, nomor:"T2-26-01-02-0506-0072-9", nisn:"0101939894", nama:"AKBAR RICI ARAFAT", ttl:"JAKARTA, 16 November 2010", mtk:43.33, mtk_p:"Memadai", bi:50.00, bi_p:"Memadai"},
+  {no:73, nomor:"T2-26-01-02-0506-0073-8", nisn:"0115991201", nama:"VANESIA WONG", ttl:"JAKARTA, 15 Maret 2011", mtk:46.67, mtk_p:"Memadai", bi:93.33, bi_p:"Baik"},
+];
+
+function getBadgeClass(predikat) {
+  if (predikat === 'Baik - Istimewa') return 'badge-baik-istimewa';
+  if (predikat === 'Baik') return 'badge-baik';
+  if (predikat === 'Memadai') return 'badge-memadai';
+  return 'badge-kurang';
+}
+
+function getInitials(nama) {
+  const parts = nama.trim().split(' ');
+  if (parts.length === 1) return parts[0].substring(0, 2).toUpperCase();
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+}
+
+function formatNilai(val) {
+  return val % 1 === 0 ? val.toFixed(0) : val.toFixed(2);
+}
+
+function cariNilai() {
+  const input = document.getElementById('inputNISN').value.trim().replace(/\s/g, '');
+  const errBox = document.getElementById('errorBox');
+  const resultCard = document.getElementById('resultCard');
+  const searchSection = document.getElementById('searchSection');
+
+  errBox.style.display = 'none';
+  resultCard.style.display = 'none';
+
+  if (!input) {
+    errBox.textContent = '⚠️ Silakan masukkan NISN terlebih dahulu.';
+    errBox.style.display = 'block';
+    return;
+  }
+
+  const siswa = DATA.find(d => d.nisn === input);
+
+  if (!siswa) {
+    errBox.textContent = '❌ NISN tidak ditemukan. Periksa kembali nomor NISN Anda.';
+    errBox.style.display = 'block';
+    return;
+  }
+
+  // Populate result
+  document.getElementById('resultAvatar').textContent = getInitials(siswa.nama);
+  document.getElementById('resultNama').textContent = siswa.nama;
+  document.getElementById('resultNisnDisplay').textContent = 'NISN: ' + siswa.nisn;
+  document.getElementById('resultNoPeserta').textContent = siswa.nomor;
+  document.getElementById('resultTTL').textContent = siswa.ttl;
+  document.getElementById('nilaiMtk').textContent = formatNilai(siswa.mtk);
+  document.getElementById('nilaiBI').textContent = formatNilai(siswa.bi);
+
+  const pmtk = document.getElementById('predikatMtk');
+  pmtk.textContent = siswa.mtk_p;
+  pmtk.className = 'badge-predikat ' + getBadgeClass(siswa.mtk_p);
+
+  const pbi = document.getElementById('predikatBI');
+  pbi.textContent = siswa.bi_p;
+  pbi.className = 'badge-predikat ' + getBadgeClass(siswa.bi_p);
+
+  document.getElementById('resultNoUrut').textContent = siswa.no;
+
+  // Show result, scroll into view
+  resultCard.style.display = 'block';
+  searchSection.style.display = 'none';
+  setTimeout(() => resultCard.scrollIntoView({behavior: 'smooth', block: 'center'}), 50);
+}
+
+function resetForm() {
+  document.getElementById('resultCard').style.display = 'none';
+  document.getElementById('searchSection').style.display = 'block';
+  document.getElementById('inputNISN').value = '';
+  document.getElementById('errorBox').style.display = 'none';
+  document.getElementById('searchSection').scrollIntoView({behavior: 'smooth', block: 'center'});
+}
+</script>
+</body>
+</html>
