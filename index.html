@@ -474,7 +474,68 @@
     .result-body { padding: 18px 16px; }
     .nilai-angka { font-size: 28px; }
   }
+
+  /* ===== LULUS STATUS ===== */
+  .lulus-banner {
+    background: linear-gradient(135deg, #059669, #10B981);
+    padding: 14px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .lulus-icon {
+    width: 28px;
+    height: 28px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .lulus-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .lulus-sub {
+    font-size: 12px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.85);
+    margin-top: 2px;
+  }
+
+  .lulus-shine {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .lulus-shine::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: shine 2.5s infinite;
+  }
+
+  @keyframes shine {
+    0% { left: -100%; }
+    100% { left: 200%; }
+  }
 </style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
@@ -531,6 +592,13 @@
       <div>
         <div class="result-nama" id="resultNama"></div>
         <div class="result-nisn-display" id="resultNisnDisplay"></div>
+      </div>
+    </div>
+    <div class="lulus-banner lulus-shine">
+      <div class="lulus-icon">✓</div>
+      <div>
+        <div class="lulus-text">LULUS</div>
+        <div class="lulus-sub">Selamat! Anda dinyatakan lulus TKA 2026</div>
       </div>
     </div>
     <div class="result-body">
